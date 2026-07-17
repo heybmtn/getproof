@@ -10,7 +10,7 @@
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23111214'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='%23D2F34C' font-family='sans-serif'>&#8599;</text></svg>">
 <style>
   :root{
@@ -21,6 +21,8 @@
     --lime:#D2F34C;
     --lime-dark:#8AA61B;
     --rule:#E2E2DC;
+    --shadow:6px 6px 0 var(--ink);
+    --shadow-sm:4px 4px 0 var(--ink);
     --display:"Archivo", system-ui, sans-serif;
     --body:"Source Serif 4", Georgia, serif;
     --measure:660px;
@@ -54,20 +56,27 @@
 
   .nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:border-color .2s}
   .nav.is-stuck{border-bottom-color:var(--rule)}
-  .nav-in{max-width:1080px;margin:0 auto;padding:0 22px;height:62px;display:flex;align-items:center}
+  .nav-in{max-width:1080px;margin:0 auto;padding:0 22px;height:74px;display:flex;align-items:center}
   /* PLACEHOLDER: drop your logo or company name in here */
   .logo{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:-.02em;text-decoration:none;color:#B4B6B2}
   .nav .btn{margin-left:auto}
 
   .btn{
-    display:inline-flex;align-items:center;gap:9px;text-decoration:none;
-    font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:-.01em;
-    background:var(--ink);color:var(--paper);border:2px solid var(--ink);
-    padding:11px 20px;border-radius:2px;transition:background .2s,color .2s,border-color .2s,transform .12s;
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;
+    font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:-.01em;
+    color:var(--ink);background:var(--paper);border:2.5px solid var(--ink);
+    border-radius:16px;padding:18px 34px;cursor:pointer;
+    box-shadow:var(--shadow);
+    transition:transform .14s ease, box-shadow .14s ease;
   }
-  .btn:hover{background:var(--lime);color:var(--ink);border-color:var(--lime)}
-  .btn:active{transform:translateY(1px)}
-  .btn--lg{font-size:18px;padding:16px 28px}
+  .btn:hover,.btn:focus-visible{transform:translate(3px,3px);box-shadow:var(--shadow-sm)}
+  .btn:active{transform:translate(6px,6px);box-shadow:0 0 0 var(--ink)}
+  /* filled variant */
+  .btn--lime{color:var(--ink);background:var(--lime);border-color:var(--ink)}
+  /* compact variant, for the nav */
+  .btn--sm{font-size:.9rem;padding:11px 18px;border-radius:12px;box-shadow:var(--shadow-sm)}
+  .btn--sm:hover,.btn--sm:focus-visible{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+  .btn--sm:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
 
   .hero{padding:clamp(52px,8vw,92px) 0 clamp(40px,5vw,60px);text-align:center}
   .hero h1{margin-bottom:26px}
@@ -76,10 +85,15 @@
 
   .steps{padding:var(--gap) 0;border-top:1px solid var(--rule)}
   .steps h2{margin-bottom:32px}
-  .step{border-top:1px solid var(--rule);padding:24px 0;display:grid;grid-template-columns:38px 1fr;gap:14px}
+  .step{border-top:1px solid var(--rule);padding:30px 0;display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:start}
   .step:last-of-type{border-bottom:1px solid var(--rule)}
-  .step-n{font-family:var(--display);font-weight:800;font-size:16px;color:var(--lime-dark);padding-top:3px}
-  .step h3{margin-bottom:6px}
+  .step-n{
+    width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+    font-family:var(--display);font-weight:700;font-size:17px;line-height:1;
+    color:var(--ink);background:var(--lime);border:2.5px solid var(--ink);
+    box-shadow:var(--shadow-sm);
+  }
+  .step h3{margin-bottom:6px;padding-top:9px}
   .step p{margin:0;font-size:17px;color:var(--ink-soft)}
   .step .we{margin:0 0 8px;font-size:17px;color:var(--ink-soft)}
   .step ul{margin:0;padding-left:20px;font-size:17px;color:var(--ink-soft)}
@@ -126,7 +140,7 @@
 
   @media (max-width:760px){
     body{font-size:18px}
-    .nav .btn{font-size:14px;padding:10px 14px}
+    .nav .btn{font-size:.8rem;padding:9px 13px}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -142,7 +156,7 @@
     <!-- PLACEHOLDER: your logo or company name -->
     <a class="logo" href="#top">[logo]</a>
     <!-- PLACEHOLDER: point this at your contact form, Calendly or mailto: -->
-    <a class="btn" href="#cta">Introduce us to your clients</a>
+    <a class="btn btn--sm" href="#cta">Introduce us to your clients</a>
   </div>
 </header>
 
@@ -154,7 +168,7 @@
       <p>Your clients have stories that help you win more business.</p>
       <p>The problem? Finding the time to interview them, write them up, and turn them into compelling case studies.</p>
       <p class="close rv"><span class="hl">That's where we come in.</span></p>
-      <a class="btn btn--lg" href="#cta">Introduce us to your clients</a>
+      <a class="btn btn--lime" href="#cta">Introduce us to your clients</a>
     </div>
   </section>
 
@@ -163,7 +177,7 @@
       <h2>How it works</h2>
 
       <div class="step">
-        <div class="step-n">1.</div>
+        <div class="step-n">1</div>
         <div>
           <h3>You choose the clients</h3>
           <p>Tell us which clients you'd like to feature.</p>
@@ -171,7 +185,7 @@
       </div>
 
       <div class="step">
-        <div class="step-n">2.</div>
+        <div class="step-n">2</div>
         <div>
           <h3>You make the introduction</h3>
           <p>We provide a simple introduction email for you to send. Once you've connected us, we take it from there.</p>
@@ -179,7 +193,7 @@
       </div>
 
       <div class="step">
-        <div class="step-n">3.</div>
+        <div class="step-n">3</div>
         <div>
           <h3>We do the rest</h3>
           <p class="we">We'll:</p>
@@ -246,7 +260,7 @@
       <p>Introduce us to your clients.</p>
       <p class="last">We'll handle everything else.</p>
       <!-- PLACEHOLDER: point this at your contact form, Calendly or mailto: -->
-      <a class="btn btn--lg" href="#">Introduce us to your clients</a>
+      <a class="btn btn--lime" href="#">Introduce us to your clients</a>
     </div>
   </section>
 </main>
