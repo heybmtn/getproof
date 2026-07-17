@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>We Turn Your Clients Into Case Studies</title>
+<title>Case Study Experts | We Turn Your Clients Into Case Studies</title>
 <meta name="description" content="Your clients have stories that help you win more business. The problem? Finding the time to interview them, write them up, and turn them into compelling case studies. That's where we come in." />
-<meta property="og:title" content="We Turn Your Clients Into Case Studies" />
+<meta property="og:title" content="Case Study Experts | We Turn Your Clients Into Case Studies" />
 <meta property="og:description" content="No chasing. No interviews. No writing. Just professionally crafted case studies, ready to publish." />
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,8 +48,7 @@
   .nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:border-color .2s}
   .nav.is-stuck{border-bottom-color:var(--rule)}
   .nav-in{max-width:1080px;margin:0 auto;padding:0 22px;height:74px;display:flex;align-items:center}
-  /* PLACEHOLDER: drop your logo or company name in here */
-  .logo{font-family:var(--display);font-weight:900;font-size:16px;letter-spacing:-.02em;text-decoration:none;color:#B4B6B2}
+  .logo{font-family:var(--display);font-weight:900;font-size:17px;letter-spacing:-.02em;text-decoration:none;color:var(--ink);white-space:nowrap}
   .nav .btn{margin-left:auto}
 
   .btn{
@@ -133,6 +132,10 @@
     body{font-size:19px}
     .nav .btn{font-size:.9rem;padding:9px 14px}
   }
+  /* below this the name and the nav button collide — the hero CTA sits right beneath anyway */
+  @media (max-width:620px){
+    .nav .btn{display:none}
+  }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     .rv{opacity:1;transform:none;transition:none}
@@ -143,8 +146,7 @@
 
 <header class="nav" id="nav">
   <div class="nav-in">
-    <!-- PLACEHOLDER: your logo or company name -->
-    <a class="logo" href="#top">[logo]</a>
+    <a class="logo" href="#top">Case Study Experts</a>
     <!-- PLACEHOLDER: point this at your contact form, Calendly or mailto: -->
     <a class="btn btn--sm" href="#cta">Introduce us to your clients</a>
   </div>
@@ -257,7 +259,7 @@
 </main>
 
 <footer class="foot">
-  <div class="foot-in">© <span id="yr">2026</span></div>
+  <div class="foot-in">© <span id="yr">2026</span> Case Study Experts</div>
 </footer>
 
 <script>
