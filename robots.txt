@@ -1,9 +1,0 @@
-# robots.txt for https://getproof.co.uk/
-# Marketing site — everything is public and crawlable.
-
-User-agent: *
-Allow: /
-
-Sitemap: https://getproof.co.uk/sitemap.xml
-
-# Plain-text summary for language models: https://getproof.co.uk/llms.txt
