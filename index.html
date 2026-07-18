@@ -8,11 +8,19 @@
 <meta property="og:title" content="Case Study Experts | We Turn Your Clients Into Case Studies" />
 <meta property="og:description" content="No chasing. No interviews. No writing. Just professionally crafted case studies, ready to publish." />
 <meta property="og:type" content="website" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/lato-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/lato-900.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23111214'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='%23D2F34C' font-family='sans-serif'>&#8599;</text></svg>">
 <style>
+  /* Lato, self-hosted — no third-party request, no render-blocking stylesheet */
+  @font-face{font-family:"Lato";font-style:normal;font-weight:400;font-display:swap;
+    src:url("/fonts/lato-400.woff2") format("woff2");}
+  @font-face{font-family:"Lato";font-style:normal;font-weight:700;font-display:swap;
+    src:url("/fonts/lato-700.woff2") format("woff2");}
+  @font-face{font-family:"Lato";font-style:normal;font-weight:900;font-display:swap;
+    src:url("/fonts/lato-900.woff2") format("woff2");}
+
   :root{
     --paper:#FFFFFF;
     --paper-2:#F5F5F1;
@@ -121,7 +129,7 @@
   .cta p{color:var(--ink-soft);margin-bottom:6px}
   .cta p.last{margin-bottom:30px}
 
-  .foot{padding:26px 0 38px;font-family:var(--display);font-size:14px;color:#8B8D90}
+  .foot{padding:26px 0 38px;font-family:var(--display);font-size:14px;color:var(--ink-soft)}
   .foot-in{max-width:1080px;margin:0 auto;padding:0 22px}
 
   .rv{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.3,1)}
