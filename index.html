@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PROOF | We Turn Your Clients Into Case Studies</title>
+<meta name="description" content="Your clients have stories that help you win more business. The problem? Finding the time to interview them, write them up, and turn them into compelling case studies. That's where we come in." />
+<meta property="og:title" content="PROOF | We Turn Your Clients Into Case Studies" />
+<meta property="og:description" content="No chasing. No interviews. No writing. Just professionally crafted case studies, ready to publish." />
+<meta property="og:type" content="website" />
+<link rel="preload" href="/fonts/figtree-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/figtree-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231A62D6'/><text x='16' y='24' font-size='22' font-weight='700' text-anchor='middle' fill='%23FFFFFF' font-family='sans-serif'>!</text></svg>">
+<style>
+  /* Effra if the host has it licensed; Figtree (self-hosted) is the free fallback */
+  @font-face{font-family:"Figtree";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/figtree-400.woff2") format("woff2");}
+  @font-face{font-family:"Figtree";font-style:normal;font-weight:500;font-display:swap;src:url("/fonts/figtree-500.woff2") format("woff2");}
+  @font-face{font-family:"Figtree";font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/figtree-700.woff2") format("woff2");}
+  @font-face{font-family:"Figtree";font-style:normal;font-weight:800;font-display:swap;src:url("/fonts/figtree-800.woff2") format("woff2");}
+
+  :root{
+    --paper:#FFFFFF;
+    --tint:#E9F1FC;        /* pale blue emphasis band */
+    --mark:#CFE6FF;        /* highlight marker */
+    --ink:#15181E;         /* near-black text + dark blocks */
+    --ink-soft:#52565E;    /* muted */
+    --blue:#1A62D6;        /* single accent — links, buttons, numbers */
+    --blue-deep:#1550B8;   /* hover */
+    --rule:#E6E8EC;
+    --font:"Effra","Figtree",system-ui,sans-serif;
+    --measure:680px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--font);font-size:20px;line-height:1.65;font-weight:400;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--measure);margin:0 auto;padding:0 22px}
+  a{color:var(--blue)}
+  h1,h2,h3{font-family:var(--font);font-weight:700;line-height:1.12;letter-spacing:-.02em;margin:0}
+  h1{font-size:clamp(33px,5.2vw,50px);line-height:1.08;letter-spacing:-.03em}
+  h2{font-size:clamp(25px,3.4vw,33px);margin:0 0 18px}
+  h3{font-size:21px;margin:0 0 6px}
+  p{margin:0 0 20px}
+  strong{font-weight:700}
+  .mark{background:var(--mark);padding:.02em .18em;border-radius:2px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+  /* header */
+  .top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid transparent;transition:border-color .2s}
+  .top.is-stuck{border-bottom-color:var(--rule)}
+  .top-in{max-width:var(--measure);margin:0 auto;padding:0 22px;height:64px;display:flex;align-items:center;gap:14px}
+  .logo{font-family:var(--font);font-weight:800;font-size:22px;letter-spacing:-.03em;text-decoration:none;color:var(--ink)}
+  .logo span{color:var(--blue)}
+  .top .btn{margin-left:auto}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--font);font-weight:700;
+    font-size:1.04rem;text-decoration:none;color:#fff;background:var(--blue);border:0;border-radius:8px;
+    padding:15px 30px;cursor:pointer;transition:background .18s ease}
+  .btn:hover,.btn:focus-visible{background:var(--blue-deep);color:#fff}
+  .btn--sm{padding:10px 18px;font-size:.94rem}
+  @media (max-width:520px){.top .btn{display:none}}
+
+  /* spacing rhythm */
+  .hero{padding:clamp(46px,7vw,84px) 0 clamp(30px,4vw,44px)}
+  .block{padding:clamp(30px,4.5vw,52px) 0}
+  .hero h1{margin-bottom:22px}
+  .lead{font-size:clamp(19px,1.6vw,22px);color:var(--ink-soft)}
+  .turn{font-weight:700;font-size:clamp(21px,2.2vw,26px);color:var(--ink);margin:0 0 26px}
+  .cta-row{margin:8px 0 0}
+
+  /* steps — a real sequence, so numbered */
+  .step{display:grid;grid-template-columns:34px 1fr;gap:14px;margin:0 0 22px}
+  .step-n{font-family:var(--font);font-weight:800;font-size:20px;color:var(--blue);line-height:1.3}
+  .step p{margin:0}
+  .step .we{margin:0 0 4px}
+  .step ul{margin:6px 0 0;padding-left:20px}
+  .step li{margin-bottom:4px}
+  .step li::marker{color:var(--blue)}
+
+  /* plain lists (receive, perfect-for, outcomes) */
+  .list{list-style:none;margin:0;padding:0}
+  .list li{padding:14px 0;border-top:1px solid var(--rule)}
+  .list li:first-child{border-top:0}
+  .list b{font-weight:700}
+  .list span{color:var(--ink-soft)}
+  .inline-list{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 10px}
+  .inline-list li{color:var(--ink-soft)}
+  .inline-list li:not(:last-child)::after{content:"·";margin-left:10px;color:var(--rule)}
+
+  /* dark emphasis block */
+  .band-dark{background:var(--ink);color:#fff}
+  .band-dark .huge{font-family:var(--font);font-weight:800;letter-spacing:-.03em;
+    font-size:clamp(34px,6vw,60px);line-height:1.02;margin:0}
+  .band-dark p{margin:20px 0 0;color:#C4C8CF;font-size:clamp(18px,1.6vw,21px)}
+
+  /* pale-blue offer band */
+  .band-tint{background:var(--tint)}
+  .price-row{display:flex;flex-wrap:wrap;gap:12px 48px;margin:6px 0 26px}
+  .price h3{margin:0 0 4px;font-size:18px;color:var(--ink-soft);font-weight:600}
+  .price .amt{font-family:var(--font);font-weight:800;font-size:clamp(40px,6vw,56px);line-height:1;letter-spacing:-.04em}
+  .price .each{font-weight:600;font-size:14px;color:var(--ink-soft);margin-top:6px}
+
+  /* outcomes */
+  .outcomes{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:2px}
+  .outcomes li{font-weight:700;font-size:clamp(19px,2vw,22px);padding:10px 0 10px 22px;position:relative}
+  .outcomes li::before{content:"→";position:absolute;left:0;color:var(--blue);font-weight:800}
+
+  /* contact form */
+  .form{display:grid;gap:14px;margin:22px 0 0}
+  .field{display:grid;gap:6px}
+  .field label{font-weight:600;font-size:14px}
+  .field input{font-family:var(--font);font-size:17px;color:var(--ink);background:var(--paper);
+    border:1px solid #CFD4DA;border-radius:8px;padding:13px 14px;width:100%;transition:border-color .18s ease}
+  .field input::placeholder{color:#8A909A}
+  .field input:focus{border-color:var(--blue)}
+  .field input:focus-visible{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
+  .form .btn{width:100%;margin-top:4px}
+  .form-note{font-size:14px;color:var(--ink-soft);text-align:center;margin:0}
+  .form-status{font-weight:700;font-size:15px;text-align:center;margin:0}
+  .form-status[data-state="ok"]{color:#1E7A3D}
+  .form-status[data-state="err"]{color:#C0261E}
+  .is-hidden{display:none}
+
+  /* footer */
+  .foot{border-top:1px solid var(--rule);padding:26px 0 40px}
+  .foot .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    font-size:14px;color:var(--ink-soft)}
+
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+  @media (max-width:760px){ body{font-size:19px} }
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+<header class="top" id="top-bar">
+  <div class="top-in">
+    <a class="logo" href="#top">PROOF<span aria-hidden="true">!</span></a>
+    <a class="btn btn--sm" href="#contact">Talk to us</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>We Turn Your Clients Into <span class="mark">Case Studies</span></h1>
+      <p class="lead">Your clients have stories that help you win more business.</p>
+      <p class="lead">The problem? Finding the time to interview them, write them up, and turn them into compelling case studies.</p>
+      <p class="turn">That's where we come in.</p>
+      <div class="cta-row"><a class="btn" href="#contact">Talk to us</a></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <div class="step">
+        <div class="step-n">1</div>
+        <div>
+          <h3>You choose the clients</h3>
+          <p>Tell us which clients you'd like to feature.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div>
+          <h3>You make the introduction</h3>
+          <p>We provide a simple introduction email for you to send. Once you've connected us, we take it from there.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div>
+          <h3>We do the rest</h3>
+          <p class="we">We'll:</p>
+          <ul>
+            <li>Coordinate directly with your client</li>
+            <li>Schedule a focused 15-minute interview</li>
+            <li>Conduct the interview</li>
+            <li>Capture the challenges, solution and results</li>
+            <li>Write everything up</li>
+            <li>Manage the approval process with your client</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <h2>What you'll receive:</h2>
+      <ul class="list">
+        <li><b>Written case study</b> — <span>for publishing on your website</span></li>
+        <li><b>One-page case study</b> — <span>easy to share</span></li>
+        <li><b>Quote cards</b> — <span>for use on social media and landing pages</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band-dark block">
+    <div class="wrap">
+      <p class="huge">No chasing.<br>No interviews.<br>No writing.</p>
+      <p>Just professionally crafted case studies, ready to publish.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <h2>Why it works</h2>
+      <p><span class="mark">The best case studies aren't written from assumptions—they're built from real conversations.</span></p>
+      <p>A short interview uncovers the details that make your work credible: the challenge your client faced, why they chose you, what changed, and the results they achieved.</p>
+      <p>Those stories become powerful sales assets your team can use across your website, proposals, presentations and marketing.</p>
+      <ul class="outcomes">
+        <li>Drive brand awareness</li>
+        <li>Attract new customers</li>
+        <li>Shorten sales cycles</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <h2>Perfect for</h2>
+      <ul class="inline-list">
+        <li>Agencies</li>
+        <li>Professional service firms</li>
+        <li>B2B SaaS companies</li>
+        <li>Marketing teams</li>
+        <li>Franchisors</li>
+        <li>Any business that wants more case studies without more work</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band-tint block">
+    <div class="wrap">
+      <h2>Pricing</h2>
+      <p>Start with one, or save with three.</p>
+      <div class="price-row">
+        <div class="price">
+          <h3>1x case study</h3>
+          <div class="amt">£249</div>
+        </div>
+        <div class="price">
+          <h3>3x case studies</h3>
+          <div class="amt">£600</div>
+          <div class="each">£200 each</div>
+        </div>
+      </div>
+      <a class="btn" href="#contact">Talk to us</a>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap">
+      <h2>Ready to build a library of case studies?</h2>
+      <!-- PLACEHOLDER: set action to your form endpoint (Formspree, Web3Forms, or a Cloudflare Pages Function). Until then it falls back to the mailto below. -->
+      <form class="form" id="contactForm" action="" method="POST" novalidate>
+        <div class="field">
+          <label for="cf-name">Name</label>
+          <input id="cf-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="cf-company">Company</label>
+          <input id="cf-company" name="company" type="text" autocomplete="organization" required>
+        </div>
+        <div class="field">
+          <label for="cf-email">Email</label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <button class="btn" type="submit">Talk to us</button>
+        <p class="form-status is-hidden" id="cf-status" role="status" aria-live="polite"></p>
+        <p class="form-note">Prefer email? <a href="mailto:hello@proofagency.co">hello@proofagency.co</a></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="logo" href="#top">PROOF<span aria-hidden="true">!</span></a>
+    <span>© <span id="yr">2026</span> PROOF</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const bar = document.getElementById('top-bar');
+  addEventListener('scroll', () => bar.classList.toggle('is-stuck', scrollY > 8), {passive:true});
+
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('cf-status');
+  const MAILTO = 'hello@proofagency.co';
+  const say = (msg, state) => { status.textContent = msg; status.dataset.state = state; status.classList.remove('is-hidden'); };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const name = (data.get('name') || '').toString().trim();
+    const company = (data.get('company') || '').toString().trim();
+    const email = (data.get('email') || '').toString().trim();
+    if (!name || !company || !email) { say('Please fill in every field.', 'err'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say('That email address looks off — mind checking it?', 'err'); return; }
+    if (!form.getAttribute('action')) {
+      const subject = encodeURIComponent('Case study enquiry — ' + company);
+      const body = encodeURIComponent(`Name: ${name}\nCompany: ${company}\nEmail: ${email}`);
+      window.location.href = `mailto:${MAILTO}?subject=${subject}&body=${body}`;
+      say('Opening your email app…', 'ok');
+      return;
+    }
+    const btn = form.querySelector('button');
+    btn.disabled = true; say('Sending…', 'ok');
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+      if (!res.ok) throw new Error(res.status);
+      form.reset(); say('Thanks — we\u2019ll be in touch shortly.', 'ok');
+    } catch { say(`Something went wrong. Please email us at ${MAILTO}.`, 'err'); }
+    finally { btn.disabled = false; }
+  });
+</script>
+</body>
+</html>
