@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Case Study Experts | We Turn Your Clients Into Case Studies</title>
+<title>PROOF | We Turn Your Clients Into Case Studies</title>
 <meta name="description" content="Your clients have stories that help you win more business. The problem? Finding the time to interview them, write them up, and turn them into compelling case studies. That's where we come in." />
-<meta property="og:title" content="Case Study Experts | We Turn Your Clients Into Case Studies" />
+<meta property="og:title" content="PROOF | We Turn Your Clients Into Case Studies" />
 <meta property="og:description" content="No chasing. No interviews. No writing. Just professionally crafted case studies, ready to publish." />
 <meta property="og:type" content="website" />
 <link rel="preload" href="/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/lato-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/lato-900.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23111214'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='%23D2F34C' font-family='sans-serif'>&#8599;</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23002538'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='%234CA9EF' font-family='sans-serif'>&#8599;</text></svg>">
 <style>
   /* Lato, self-hosted — no third-party request, no render-blocking stylesheet */
   @font-face{font-family:"Lato";font-style:normal;font-weight:400;font-display:swap;
@@ -23,14 +23,12 @@
 
   :root{
     --paper:#FFFFFF;
-    --paper-2:#F5F5F1;
-    --ink:#111214;
-    --ink-soft:#4A4C50;
-    --lime:#D2F34C;
-    --lime-dark:#8AA61B;
-    --rule:#E2E2DC;
-    --shadow:6px 6px 0 var(--ink);
-    --shadow-sm:4px 4px 0 var(--ink);
+    --paper-2:#EDF7FF;         /* pale blue section background */
+    --ink:#002538;             /* navy — headings, borders, dark section */
+    --ink-soft:#313131;        /* grey body text */
+    --lime:#4CA9EF;            /* bright blue accent — button + circle fills, rules */
+    --lime-dark:#0B6DAD;       /* darker blue — accent text/marks on light bg (AA-safe) */
+    --rule:#D6E6F2;            /* soft blue-grey hairline */
     --display:"Lato", system-ui, sans-serif;
     --body:"Lato", system-ui, sans-serif;
     --measure:700px;
@@ -56,20 +54,20 @@
   .nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:border-color .2s}
   .nav.is-stuck{border-bottom-color:var(--rule)}
   .nav-in{max-width:1080px;margin:0 auto;padding:0 22px;height:74px;display:flex;align-items:center}
-  .logo{font-family:var(--display);font-weight:900;font-size:17px;letter-spacing:-.02em;text-decoration:none;color:var(--ink);white-space:nowrap}
+  .logo{font-family:var(--display);font-weight:900;font-size:20px;letter-spacing:.02em;text-decoration:none;color:var(--ink);white-space:nowrap;display:inline-flex;align-items:center;gap:2px}
+  .logo span{color:var(--lime-dark);font-size:.85em}
 
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;
     font-family:var(--display);font-weight:700;font-size:1.15rem;letter-spacing:-.01em;
-    color:var(--ink);background:var(--paper);border:2.5px solid var(--ink);
-    border-radius:16px;padding:18px 34px;cursor:pointer;
-    box-shadow:var(--shadow);
-    transition:transform .14s ease, box-shadow .14s ease;
+    color:var(--paper);background:var(--ink);border:2px solid var(--ink);
+    border-radius:10px;padding:16px 34px;cursor:pointer;
+    transition:background .18s ease, border-color .18s ease, color .18s ease;
   }
-  .btn:hover,.btn:focus-visible{transform:translate(3px,3px);box-shadow:var(--shadow-sm)}
-  .btn:active{transform:translate(6px,6px);box-shadow:0 0 0 var(--ink)}
-  /* filled variant */
-  .btn--lime{color:var(--ink);background:var(--lime);border-color:var(--ink)}
+  .btn:hover,.btn:focus-visible{background:var(--lime);border-color:var(--lime);color:var(--ink)}
+  /* filled accent variant */
+  .btn--lime{color:var(--ink);background:var(--lime);border-color:var(--lime)}
+  .btn--lime:hover,.btn--lime:focus-visible{background:var(--lime-dark);border-color:var(--lime-dark);color:var(--paper)}
 
   .hero{padding:clamp(52px,8vw,92px) 0 clamp(40px,5vw,60px);text-align:center}
   .hero h1{margin-bottom:26px}
@@ -83,8 +81,7 @@
   .step-n{
     width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
     font-family:var(--display);font-weight:900;font-size:19px;line-height:1;
-    color:var(--ink);background:var(--lime);border:2.5px solid var(--ink);
-    box-shadow:var(--shadow-sm);
+    color:var(--paper);background:var(--ink);
   }
   .step h3{margin-bottom:6px;padding-top:9px}
   .step p{margin:0;font-size:19px;color:var(--ink-soft)}
@@ -112,13 +109,13 @@
   .pricing .lede{color:var(--ink-soft);margin-bottom:34px}
   .price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:620px}
   .price{
-    border:2.5px solid var(--ink);border-radius:16px;background:var(--paper);
-    box-shadow:var(--shadow);padding:28px 26px;display:flex;flex-direction:column;
+    border:1px solid var(--rule);border-radius:10px;background:var(--paper);
+    padding:28px 26px;display:flex;flex-direction:column;
   }
   .price h3{font-size:20px;margin-bottom:14px}
   .price .amt{font-family:var(--display);font-weight:900;font-size:clamp(40px,6vw,54px);line-height:1;letter-spacing:-.03em}
   .price .each{font-family:var(--display);font-weight:700;font-size:14px;color:var(--ink-soft);margin-top:10px}
-  .price--feature{background:var(--lime)}
+  .price--feature{background:var(--lime);border-color:var(--lime)}
   .price--feature .each{color:var(--ink)}
   @media (max-width:520px){.price-grid{grid-template-columns:1fr;max-width:none}}
 
@@ -128,9 +125,11 @@
   .field label{font-family:var(--display);font-weight:700;font-size:15px}
   .field input{
     font-family:var(--body);font-size:17px;color:var(--ink);background:var(--paper);
-    border:2.5px solid var(--ink);border-radius:12px;padding:13px 15px;width:100%;
+    border:1px solid var(--rule);border-radius:8px;padding:13px 15px;width:100%;
+    transition:border-color .18s ease;
   }
-  .field input:focus{outline:3px solid var(--lime-dark);outline-offset:2px}
+  .field input:focus{border-color:var(--lime)}
+  .field input:focus-visible{outline:2px solid var(--lime);outline-offset:1px;border-color:var(--lime)}
   .form .btn{width:100%;margin-top:4px}
   .form-note{font-family:var(--display);font-size:14px;color:var(--ink-soft);text-align:center;margin:0}
   .form-status{font-family:var(--display);font-weight:700;font-size:17px;text-align:center;margin:0}
@@ -147,18 +146,18 @@
 
   .why{background:var(--ink);color:var(--paper);padding:var(--gap) 0}
   .why h2{margin-bottom:24px}
-  .why p{color:#B9BBB7}
+  .why p{color:#AFC4D4}
   .why p:last-of-type{margin-bottom:0}
   .outcomes{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .outcomes li{
     font-family:var(--display);font-weight:900;font-size:clamp(19px,2vw,23px);
     line-height:1.2;letter-spacing:-.02em;color:var(--paper);
-    border-top:2.5px solid var(--lime);padding-top:16px;
+    border-top:2px solid var(--lime);padding-top:16px;
   }
   @media (max-width:640px){
     .outcomes{grid-template-columns:1fr;gap:0}
     .outcomes li{border-top:1px solid rgba(255,255,255,.15);padding:16px 0}
-    .outcomes li:first-child{border-top:2.5px solid var(--lime)}
+    .outcomes li:first-child{border-top:2px solid var(--lime)}
   }
   .why .first{color:var(--paper);font-weight:700}
 
@@ -193,7 +192,7 @@
 
 <header class="nav" id="nav">
   <div class="nav-in">
-    <a class="logo" href="#top">Case Study Experts</a>
+    <a class="logo" href="#top">PROOF<span aria-hidden="true">↗</span></a>
   </div>
 </header>
 
@@ -239,8 +238,7 @@
             <li>Schedule a focused 15-minute interview</li>
             <li>Conduct the interview</li>
             <li>Capture the challenges, solution and results</li>
-            <li>Write a polished one-page case study</li>
-            <li>Pull out key quotes and proof points</li>
+            <li>Write everything up</li>
             <li>Manage the approval process with your client</li>
           </ul>
         </div>
@@ -334,14 +332,14 @@
         </div>
         <button class="btn btn--lime" type="submit">Talk to us</button>
         <p class="form-status is-hidden" id="cf-status" role="status" aria-live="polite"></p>
-        <p class="form-note">Prefer email? <a href="mailto:hello@casestudyexperts.co.uk">hello@casestudyexperts.co.uk</a></p>
+        <p class="form-note">Prefer email? <a href="mailto:hello@proofagency.co">hello@proofagency.co</a></p>
       </form>
     </div>
   </section>
 </main>
 
 <footer class="foot">
-  <div class="foot-in">© <span id="yr">2026</span> Case Study Experts</div>
+  <div class="foot-in">© <span id="yr">2026</span> PROOF</div>
 </footer>
 
 <script>
@@ -362,7 +360,7 @@
   // contact form: POST to the configured endpoint, or fall back to a prefilled email
   const form = document.getElementById('contactForm');
   const status = document.getElementById('cf-status');
-  const MAILTO = 'hello@casestudyexperts.co.uk';
+  const MAILTO = 'hello@proofagency.co';
   const say = (msg, state) => { status.textContent = msg; status.dataset.state = state; status.classList.remove('is-hidden'); };
 
   form.addEventListener('submit', async (e) => {
