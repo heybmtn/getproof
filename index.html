@@ -57,7 +57,6 @@
   .nav.is-stuck{border-bottom-color:var(--rule)}
   .nav-in{max-width:1080px;margin:0 auto;padding:0 22px;height:74px;display:flex;align-items:center}
   .logo{font-family:var(--display);font-weight:900;font-size:17px;letter-spacing:-.02em;text-decoration:none;color:var(--ink);white-space:nowrap}
-  .nav .btn{margin-left:auto}
 
   .btn{
     display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;
@@ -71,10 +70,6 @@
   .btn:active{transform:translate(6px,6px);box-shadow:0 0 0 var(--ink)}
   /* filled variant */
   .btn--lime{color:var(--ink);background:var(--lime);border-color:var(--ink)}
-  /* compact variant, for the nav */
-  .btn--sm{font-size:1rem;padding:11px 18px;border-radius:12px;box-shadow:var(--shadow-sm)}
-  .btn--sm:hover,.btn--sm:focus-visible{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
-  .btn--sm:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
 
   .hero{padding:clamp(52px,8vw,92px) 0 clamp(40px,5vw,60px);text-align:center}
   .hero h1{margin-bottom:26px}
@@ -101,9 +96,47 @@
   .receive{background:var(--paper-2);padding:var(--gap) 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
   .receive h2{margin-bottom:26px}
   .ticks{list-style:none;margin:0;padding:0}
-  .ticks li{display:flex;gap:12px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--rule);font-size:21px}
+  .ticks li{display:flex;gap:14px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--rule);font-size:21px}
   .ticks li:last-child{border-bottom:0}
-  .ticks li::before{content:"✓";font-family:var(--display);font-weight:900;font-size:16px;color:var(--lime-dark);flex:none}
+  .ticks li::before{content:"✓";font-family:var(--display);font-weight:900;font-size:16px;color:var(--lime-dark);flex:none;position:relative;top:-1px}
+  .ticks b{font-weight:900}
+  .ticks span{color:var(--ink-soft)}
+  @media (max-width:520px){
+    .ticks li{flex-wrap:wrap;gap:2px 14px}
+    .ticks span{flex-basis:100%;padding-left:30px;font-size:18px}
+  }
+
+  /* pricing */
+  .pricing{padding:var(--gap) 0}
+  .pricing h2{margin-bottom:8px}
+  .pricing .lede{color:var(--ink-soft);margin-bottom:34px}
+  .price-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:620px}
+  .price{
+    border:2.5px solid var(--ink);border-radius:16px;background:var(--paper);
+    box-shadow:var(--shadow);padding:28px 26px;display:flex;flex-direction:column;
+  }
+  .price h3{font-size:20px;margin-bottom:14px}
+  .price .amt{font-family:var(--display);font-weight:900;font-size:clamp(40px,6vw,54px);line-height:1;letter-spacing:-.03em}
+  .price .each{font-family:var(--display);font-weight:700;font-size:14px;color:var(--ink-soft);margin-top:10px}
+  .price--feature{background:var(--lime)}
+  .price--feature .each{color:var(--ink)}
+  @media (max-width:520px){.price-grid{grid-template-columns:1fr;max-width:none}}
+
+  /* contact form */
+  .form{display:grid;gap:16px;max-width:520px;margin:30px auto 0;text-align:left}
+  .field{display:grid;gap:7px}
+  .field label{font-family:var(--display);font-weight:700;font-size:15px}
+  .field input{
+    font-family:var(--body);font-size:17px;color:var(--ink);background:var(--paper);
+    border:2.5px solid var(--ink);border-radius:12px;padding:13px 15px;width:100%;
+  }
+  .field input:focus{outline:3px solid var(--lime-dark);outline-offset:2px}
+  .form .btn{width:100%;margin-top:4px}
+  .form-note{font-family:var(--display);font-size:14px;color:var(--ink-soft);text-align:center;margin:0}
+  .form-status{font-family:var(--display);font-weight:700;font-size:17px;text-align:center;margin:0}
+  .form-status[data-state="ok"]{color:#1f7a3d}
+  .form-status[data-state="err"]{color:#b3261e}
+  .is-hidden{display:none}
 
   .drum{padding:var(--gap) 0;text-align:center}
   .drum b{
@@ -115,7 +148,18 @@
   .why{background:var(--ink);color:var(--paper);padding:var(--gap) 0}
   .why h2{margin-bottom:24px}
   .why p{color:#B9BBB7}
-  .why p:last-child{margin-bottom:0}
+  .why p:last-of-type{margin-bottom:0}
+  .outcomes{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .outcomes li{
+    font-family:var(--display);font-weight:900;font-size:clamp(19px,2vw,23px);
+    line-height:1.2;letter-spacing:-.02em;color:var(--paper);
+    border-top:2.5px solid var(--lime);padding-top:16px;
+  }
+  @media (max-width:640px){
+    .outcomes{grid-template-columns:1fr;gap:0}
+    .outcomes li{border-top:1px solid rgba(255,255,255,.15);padding:16px 0}
+    .outcomes li:first-child{border-top:2.5px solid var(--lime)}
+  }
   .why .first{color:var(--paper);font-weight:700}
 
   .fit{padding:var(--gap) 0}
@@ -138,11 +182,6 @@
 
   @media (max-width:760px){
     body{font-size:19px}
-    .nav .btn{font-size:.9rem;padding:9px 14px}
-  }
-  /* below this the name and the nav button collide — the hero CTA sits right beneath anyway */
-  @media (max-width:620px){
-    .nav .btn{display:none}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -155,8 +194,6 @@
 <header class="nav" id="nav">
   <div class="nav-in">
     <a class="logo" href="#top">Case Study Experts</a>
-    <!-- PLACEHOLDER: point this at your contact form, Calendly or mailto: -->
-    <a class="btn btn--sm" href="#cta">Introduce us to your clients</a>
   </div>
 </header>
 
@@ -168,7 +205,7 @@
       <p>Your clients have stories that help you win more business.</p>
       <p>The problem? Finding the time to interview them, write them up, and turn them into compelling case studies.</p>
       <p class="close rv">That's where we come in.</p>
-      <a class="btn btn--lime" href="#cta">Introduce us to your clients</a>
+      <a class="btn btn--lime" href="#contact">Talk to us</a>
     </div>
   </section>
 
@@ -215,10 +252,9 @@
     <div class="wrap">
       <h2>What you'll receive:</h2>
       <ul class="ticks">
-        <li>A professionally written one-page case study</li>
-        <li>Client-approved quotes</li>
-        <li>Quotes for sales presentations</li>
-        <li>Social media snippets</li>
+        <li><b>Written case study</b> <span>for publishing on your website</span></li>
+        <li><b>One-page case study</b> <span>easy to share</span></li>
+        <li><b>Quote cards</b> <span>for use on social media and landing pages</span></li>
       </ul>
     </div>
   </section>
@@ -238,6 +274,11 @@
       <p class="first">The best case studies aren't written from assumptions—they're built from real conversations.</p>
       <p>A short interview uncovers the details that make your work credible: the challenge your client faced, why they chose you, what changed, and the results they achieved.</p>
       <p>Those stories become powerful sales assets your team can use across your website, proposals, presentations and marketing.</p>
+      <ul class="outcomes">
+        <li>Drive brand awareness</li>
+        <li>Attract new customers</li>
+        <li>Shorten sales cycles</li>
+      </ul>
     </div>
   </section>
 
@@ -255,13 +296,46 @@
     </div>
   </section>
 
-  <section class="cta" id="cta">
+  <section class="pricing">
+    <div class="wrap">
+      <h2>Pricing</h2>
+      <p class="lede">Start with one, or save with three.</p>
+      <div class="price-grid">
+        <div class="price">
+          <h3>1x case study</h3>
+          <span class="amt">£249</span>
+        </div>
+        <div class="price price--feature">
+          <h3>3x case studies</h3>
+          <span class="amt">£600</span>
+          <span class="each">£200 each</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="contact">
     <div class="wrap">
       <h2>Ready to build a library of case studies?</h2>
-      <p>Introduce us to your clients.</p>
-      <p class="last">We'll handle everything else.</p>
-      <!-- PLACEHOLDER: point this at your contact form, Calendly or mailto: -->
-      <a class="btn btn--lime" href="#">Introduce us to your clients</a>
+
+      <!-- PLACEHOLDER: set action to your form endpoint (Formspree, Web3Forms, or a Cloudflare Pages Function). Until then it falls back to the mailto below. -->
+      <form class="form" id="contactForm" action="" method="POST" novalidate>
+        <div class="field">
+          <label for="cf-name">Name</label>
+          <input id="cf-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="cf-company">Company</label>
+          <input id="cf-company" name="company" type="text" autocomplete="organization" required>
+        </div>
+        <div class="field">
+          <label for="cf-email">Email</label>
+          <input id="cf-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <button class="btn btn--lime" type="submit">Talk to us</button>
+        <p class="form-status is-hidden" id="cf-status" role="status" aria-live="polite"></p>
+        <p class="form-note">Prefer email? <a href="mailto:hello@casestudyexperts.co.uk">hello@casestudyexperts.co.uk</a></p>
+      </form>
     </div>
   </section>
 </main>
@@ -284,6 +358,45 @@
     });
   }, {threshold:.3});
   document.querySelectorAll('.rv').forEach(n => io.observe(n));
+
+  // contact form: POST to the configured endpoint, or fall back to a prefilled email
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('cf-status');
+  const MAILTO = 'hello@casestudyexperts.co.uk';
+  const say = (msg, state) => { status.textContent = msg; status.dataset.state = state; status.classList.remove('is-hidden'); };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const name = (data.get('name') || '').toString().trim();
+    const company = (data.get('company') || '').toString().trim();
+    const email = (data.get('email') || '').toString().trim();
+
+    if (!name || !company || !email) { say('Please fill in every field.', 'err'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say('That email address looks off — mind checking it?', 'err'); return; }
+
+    // No endpoint configured yet → open the visitor's email client, prefilled.
+    if (!form.getAttribute('action')) {
+      const subject = encodeURIComponent('Case study enquiry — ' + company);
+      const body = encodeURIComponent(`Name: ${name}\nCompany: ${company}\nEmail: ${email}`);
+      window.location.href = `mailto:${MAILTO}?subject=${subject}&body=${body}`;
+      say('Opening your email app…', 'ok');
+      return;
+    }
+
+    const btn = form.querySelector('button');
+    btn.disabled = true; say('Sending…', 'ok');
+    try {
+      const res = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+      if (!res.ok) throw new Error(res.status);
+      form.reset();
+      say('Thanks — we\u2019ll be in touch shortly.', 'ok');
+    } catch {
+      say(`Something went wrong. Please email us at ${MAILTO}.`, 'err');
+    } finally {
+      btn.disabled = false;
+    }
+  });
 </script>
 </body>
 </html>
