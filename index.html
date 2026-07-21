@@ -77,10 +77,6 @@
   .step li{margin-bottom:4px}
   .step li::marker{color:var(--blue)}
 
-  .inline-list{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 10px}
-  .inline-list li{color:var(--ink-soft)}
-  .inline-list li:not(:last-child)::after{content:"·";margin-left:10px;color:var(--rule)}
-
   /* ---------- angled full-bleed colour bands (NoDesk-style) ---------- */
   /* colour band = a parallelogram (same lean on every band) behind a white card */
   .band{position:relative;margin:clamp(48px,7vw,84px) 0;padding:clamp(48px,6vw,80px) clamp(20px,4vw,48px)}
@@ -136,8 +132,11 @@
   .is-hidden{display:none}
 
   /* footer */
-  .foot{border-top:1px solid var(--rule);padding:26px 0 40px}
-  .foot .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  .foot{border-top:1px solid var(--rule);padding:30px 0 40px}
+  .foot-keys{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-wrap:wrap;gap:8px 0;
+    font-size:14px;color:var(--ink-soft)}
+  .foot-keys li:not(:last-child)::after{content:"·";margin:0 10px;color:var(--rule)}
+  .foot-base{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
     font-size:14px;color:var(--ink-soft)}
 
   :focus-visible{outline:3px solid var(--blue);outline-offset:3px}
@@ -236,19 +235,6 @@
     </div>
   </section>
 
-  <section class="block">
-    <div class="wrap">
-      <h2>Perfect for</h2>
-      <ul class="inline-list">
-        <li>Agencies</li>
-        <li>Professional service firms</li>
-        <li>B2B SaaS companies</li>
-        <li>Marketing teams</li>
-        <li>Franchisors</li>
-      </ul>
-    </div>
-  </section>
-
   <section class="band band--cyan">
     <div class="card">
       <h2>Pricing</h2>
@@ -294,8 +280,17 @@
 
 <footer class="foot">
   <div class="wrap">
-    <a class="logo" href="#top">PROOF<span aria-hidden="true">!</span></a>
-    <span>© <span id="yr">2026</span> PROOF</span>
+    <ul class="foot-keys">
+      <li>B2B case studies for service businesses</li>
+      <li>Case studies for agencies</li>
+      <li>Case studies for manufacturing companies</li>
+      <li>Case studies for SaaS companies</li>
+      <li>B2B case studies</li>
+    </ul>
+    <div class="foot-base">
+      <a class="logo" href="#top">PROOF<span aria-hidden="true">!</span></a>
+      <span>© <span id="yr">2026</span> PROOF</span>
+    </div>
   </div>
 </footer>
 
