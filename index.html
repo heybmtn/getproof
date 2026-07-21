@@ -95,13 +95,15 @@
   .band .card .sub{margin:16px 0 0;color:var(--ink-soft);font-size:clamp(18px,1.6vw,21px)}
 
   /* checkmarks inside the white card */
-  .checks{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:14px}
-  .checks li{position:relative;padding-left:34px;font-weight:600;font-size:clamp(18px,1.7vw,21px)}
-  .checks li::before{content:"✓";position:absolute;left:0;top:.12em;width:22px;height:22px;border-radius:50%;
-    background:var(--band-tint);color:var(--band-ink);font-size:12px;font-weight:800;
+  .checks{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:16px}
+  .checks li{display:flex;gap:12px;font-weight:600;font-size:clamp(18px,1.7vw,21px);line-height:1.4}
+  .checks li .ico{flex:none;width:24px;height:24px;border-radius:50%;margin-top:calc(.7em - 9px);
+    background:var(--band-tint);color:var(--band-ink);font-size:13px;font-weight:800;
     display:flex;align-items:center;justify-content:center;line-height:1}
   .checks li b{font-weight:800}
-  .checks li span{color:var(--ink-soft);font-weight:400}
+  .checks li .ct{flex:1}
+  .checks li .ct span{color:var(--ink-soft);font-weight:400}
+  .checks--lg li .ico{margin-top:calc(.7em - 7px)}
   .band--indigo{--band-tint:#E7E6FC;--band-ink:#4F46E5}
   .band--cyan{--band-tint:#D5F2F8;--band-ink:#0E7490}
 
@@ -163,9 +165,9 @@
   <section class="band band--cyan">
     <div class="card">
       <ul class="checks checks--lg">
-        <li><b>Drive brand awareness</b></li>
-        <li><b>Attract new customers</b></li>
-        <li><b>Shorten sales cycles</b></li>
+        <li><span class="ico">✓</span><b>Drive brand awareness</b></li>
+        <li><span class="ico">✓</span><b>Attract new customers</b></li>
+        <li><span class="ico">✓</span><b>Shorten sales cycles</b></li>
       </ul>
     </div>
   </section>
@@ -209,9 +211,9 @@
     <div class="card">
       <h2>What you'll receive:</h2>
       <ul class="checks">
-        <li><b>Written case study</b> — <span>for publishing on your website</span></li>
-        <li><b>One-page case study</b> — <span>easy to share</span></li>
-        <li><b>Quote cards</b> — <span>for use on social media and landing pages</span></li>
+        <li><span class="ico">✓</span><span class="ct"><b>Written case study</b> — <span>for publishing on your website</span></span></li>
+        <li><span class="ico">✓</span><span class="ct"><b>One-page case study</b> — <span>easy to share</span></span></li>
+        <li><span class="ico">✓</span><span class="ct"><b>Quote cards</b> — <span>for use on social media and landing pages</span></span></li>
       </ul>
     </div>
   </section>
